@@ -1,4 +1,5 @@
 Dice die;
+boolean rightClick = false;
 
 void setup()
   {
@@ -8,7 +9,7 @@ void setup()
  
   void draw()
   {
-    background (255);
+    background (163, 156, 137);
     //your code here
    int rollCount = 0;
   int j = 0;
@@ -27,14 +28,16 @@ void setup()
    
    String s = "Count: ";
    textSize(50);
+   fill (255);
    text(s+rollCount,60, 470);
-   System.out.println(s+rollCount);
+  // System.out.println(s+rollCount);
  
   }
   
   void mousePressed()
-  { 
-    redraw();
+  { redraw();
+    
+
   }
   
   class Dice //models one single dice cube
@@ -62,13 +65,14 @@ void setup()
       {
           //your code here
           fill (255);
-          square (x,y,mySize);
-          
-          
-          
+          rect (x,y,mySize, mySize, 5);
           
           int div = 6;
           fill (0);
+          int r = (int)(Math.random() * 255)+150;
+          int g = (int)(Math.random()*255)+150;
+          int b = (int)(Math.random()*255)+150;
+         
           if (num == 6) {
             ellipse ((float)x+(mySize/5),(float)y+(mySize/5),mySize/div,mySize/div); //top left corner
             ellipse ((float)x+(mySize/1.25), (float) y+(mySize/5), mySize/div, mySize/div); // top rt corner
@@ -97,5 +101,7 @@ void setup()
           } else {
             ellipse ((float)x+(mySize/2), (float) y+(mySize/2), mySize/div, mySize/div); //center
           }
+          
+       
       }
   }
