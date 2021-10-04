@@ -2,6 +2,8 @@ Dice die;
 Dice died;
 Dice dyed;
 Dice dead;
+Dice dye;
+Dice dies;
 boolean rightClick = false;
 
 void setup()
@@ -18,62 +20,94 @@ void setup()
     int j = 0;
     
     int bored = (int)(Math.random()*5)+1;
+    int hundred = (int)(Math.random()*100)+1;
     
-    if (bored == 1)
-    {
-      died = new Dice (0, 0, 400);
-      
-      died.roll();
-      died.show();
-      rollCount = died.num + rollCount;
-    } else if (bored == 2){
-      dyed = new Dice (0,0,400);
-      
-     while (j<400){
-      int i = 0;
-     while (i<400) {
-        dyed = new Dice (i, j, 200);
-        dyed.roll();
-        dyed.show();
-        i+=200;
-        rollCount = dyed.num + rollCount;
-     }
-     j +=200;
-
-     }
-
-    } else if (bored == 3) {
-       dead = new Dice (0,0,400);
-        
-       while (j<400){
-        int i = 0;
-       while (i<400) {
-          dead = new Dice (i, j, 80);
-          dead.roll();
-          dead.show();
-          i+=80;
-          rollCount = dead.num + rollCount;
-       }
-       j +=80;
-  
-       }
+    if (hundred == 1){
+        dye = new Dice (0,0,400);
+          
+         while (j<400){
+          int i = 0;
+         while (i<400) {
+            dye = new Dice (i, j, 5);
+            dye.roll();
+            dye.show();
+            i+=5;
+            rollCount = dye.num + rollCount;
+         }
+         j +=5;
+    
+         }
     } else {
+        if (bored == 1)
+        {
+          died = new Dice (0, 0, 400);
+          
+          died.roll();
+          died.show();
+          rollCount = died.num + rollCount;
+        } else if (bored == 2){
+          dyed = new Dice (0,0,400);
+          
+         while (j<400){
+          int i = 0;
+         while (i<400) {
+            dyed = new Dice (i, j, 200);
+            dyed.roll();
+            dyed.show();
+            i+=200;
+            rollCount = dyed.num + rollCount;
+         }
+         j +=200;
     
-     while (j<400){
-      int i = 0;
-     while (i<400) {
-        die = new Dice (i, j, 40);
-        die.roll();
-        die.show();
-        i+=40;
-        rollCount = die.num + rollCount;
-     }
-     j +=40;
-
-     }
-   
+         }
+    
+        } else if (bored == 3) {
+           dead = new Dice (0,0,400);
+            
+           while (j<400){
+            int i = 0;
+           while (i<400) {
+              dead = new Dice (i, j, 80);
+              dead.roll();
+              dead.show();
+              i+=80;
+              rollCount = dead.num + rollCount;
+           }
+           j +=80;
+      
+           }
+        } else if (bored == 4){
+         dies = new Dice (0,0,400);
+          
+         while (j<400){
+          int i = 0;
+         while (i<400) {
+            dies = new Dice (i, j, 20);
+            dies.roll();
+            dies.show();
+            i+=20;
+            rollCount = dies.num + rollCount;
+         }
+         j +=20;
+        } 
+      } else {
+        
+         while (j<400){
+          int i = 0;
+         while (i<400) {
+            die = new Dice (i, j, 40);
+            die.roll();
+            die.show();
+            i+=40;
+            rollCount = die.num + rollCount;
+         }
+         j +=40;
+    
+         }
+       
+        }
     }
-   
+    
    String s = "Count: ";
    textSize(50);
    fill (255);
@@ -83,9 +117,8 @@ void setup()
   }
   
   void mousePressed()
-  { redraw();
-    
-
+  { 
+    redraw();
   }
   
   class Dice //models one single dice cube
