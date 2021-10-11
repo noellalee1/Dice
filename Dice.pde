@@ -22,7 +22,7 @@ void setup()
     int bored = (int)(Math.random()*5)+1;
     int hundred = (int)(Math.random()*100)+1;
     
-    if (hundred == 1){
+    if (hundred < 99){
         dye = new Dice (0,0,400);
           
          while (j<400){
